@@ -1,6 +1,6 @@
 import React from 'react'
 import { SiDependabot } from "react-icons/si";
-import { FaRegCircleUser } from "react-icons/fa";
+import { FaRegCircleUser } from "react-icons/fa6";
 
 
 const Navbar = () => {
@@ -12,7 +12,7 @@ const Navbar = () => {
             <h3 className='text-[25px] font-[700]'>SmartChat<span className='text-purple-500'> AI</span></h3>
           </div>
           <div className="user">
-            <i><FaRegCircleUser/></i>
+            <i className='text-[27px] cursor-pointer'><FaRegCircleUser /></i>
           </div>
        </div>
     </div>
