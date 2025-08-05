@@ -4,6 +4,10 @@ import Navbar from './components/Navbar';
 import { GoogleGenAI } from "@google/genai";
 import { BeatLoader } from "react-spinners";
 import Markdown from 'react-markdown'
+import { RiComputerFill } from "react-icons/ri";
+import { FaBook } from "react-icons/fa";
+import { FaBookOpen } from "react-icons/fa6";
+import { RiBloggerFill } from "react-icons/ri";
 
 
 const App = () => {
@@ -47,9 +51,31 @@ const App = () => {
         {
           screen === 1 ?
             <div className="screen-1  w-screen h-[65vh] px-[150px] flex items-center justify-center flex-col">
-              <h3 className='text-[30px] font-[700]'>SmartChat<span className='text-purple-500'> AI</span></h3>
+              <h3 className='!text-[40px] font-[700]'>SmartChat<span className='text-purple-500'> AI</span></h3>
+              <div className="flex mt-5 items-center gap-[15px]">
+                 <div className="card w-[200px] h-[fit] cursor-pointer bg-zinc-800 transition-all hover:bg-gray-800 rounded-lg p-[15px]">
+                  <i className='text-[30px]'><RiComputerFill /></i>
+                  <p className='mt-3'>Create a website html css and js.</p>
+                 </div>
+
+                 <div className="card w-[200px] h-[fit] cursor-pointer bg-zinc-800 transition-all hover:bg-gray-800 rounded-lg p-[15px]">
+                  <i className='text-[30px]'><FaBook /></i>
+                  <p className='mt-3'>Write a book for me. Topic is coding.</p>
+                 </div>
+
+                 <div className="card w-[200px] h-[fit] cursor-pointer bg-zinc-800 transition-all hover:bg-gray-800 rounded-lg p-[15px]">
+                  <i className='text-[30px]'><FaBookOpen /></i>
+                  <p className='mt-3'>Tell me a comedy story.</p>
+                 </div>
+
+                 <div className="card w-[200px] h-[fit] cursor-pointer bg-zinc-800 transition-all hover:bg-gray-800 rounded-lg p-[15px]">
+                  <i className='text-[30px]'><RiBloggerFill /></i>
+                  <p className='mt-3'>Generate me a blog content for travelling</p>
+                 </div>
+
+              </div>
             </div> : <>
-              <div className="screen-2 overflow-y-auto w-screen h-[65vh] px-[150px]">
+              <div className="screen-2 overflow-y-auto w-screen h-[70vh] px-[150px]">
                 {
                   data ? data.map((item, index) => {
                     return (
@@ -81,7 +107,7 @@ const App = () => {
 
       </div>
 
-      <div className="inputBox px-[150px] h-[20vh] ">
+      <div className="inputBox px-[150px] h-[15vh] pt-3">
         <div className="input w-[90%] mx-[auto] flex items-center gap-[10px] bg-zinc-800 rounded-lg">
           <input onKeyDown={(e) => {
             if (e.key === "Enter") {
@@ -89,6 +115,7 @@ const App = () => {
             }
           }} onChange={(e) => { setPrompt(e.target.value) }} value={prompt} type="text" placeholder='Enter your prompt!' className='flex-1 bg-transparent rounded-lg p-[15px] outline-none text-[18px] font-[500]' />
         </div>
+        <p className='text-[gray] text-center mt-3'>SmartChat AI can make mistakes! cross check it.</p>
       </div>
     </div>
   )
